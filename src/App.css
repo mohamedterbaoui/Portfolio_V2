@@ -1,1 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap");
 @import "tailwindcss";
+
+@theme {
+  --font-inter: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+    sans-serif;
+  --font-poppins: "Poppins", system-ui, sans-serif;
+  --animate-breathing: breathing 8s ease-in-out infinite;
+}
+
+@layer utilities {
+  .font-heading {
+    font-family: var(--font-poppins);
+  }
+  .font-body {
+    font-family: var(--font-inter);
+  }
+}
+
+@keyframes breathing {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
