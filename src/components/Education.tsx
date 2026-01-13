@@ -106,8 +106,7 @@ export default function Education() {
               <div className="flex gap-2 items-center">
                 <FaUniversity className="min-w-3 text-[12px]" />
                 <span className="text-sm">
-                  Institute of electrical and electronics engineering,
-                  Boumerdes, Algeria
+                  IGEE ex INELEC, Boumerdes, Algeria
                 </span>
               </div>
             </div>
