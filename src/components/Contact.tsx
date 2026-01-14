@@ -8,6 +8,10 @@ import {
   animate,
 } from "framer-motion";
 
+const githubLink = "https://github.com/mohamedterbaoui";
+const linkedinLink = "https://www.linkedin.com/in/mohamedterbaoui";
+const emailAddress = "mailto:m.terbaoui7@gmail.com";
+
 // Separate component for the animated card
 const AnimatedContactCard = ({
   icon: Icon,
@@ -107,18 +111,27 @@ export default function Contact() {
       </h3>
 
       <div className="w-full flex gap-8 justify-around items-center mt-16 mb-32">
-        <AnimatedContactCard icon={FaEnvelope} label="Email" />
-        <AnimatedContactCard icon={FaLinkedinIn} label="LinkedIn" />
-        <AnimatedContactCard icon={FaGithub} label="GitHub" />
+        <a href={emailAddress} target="_blank" className="flex-1">
+          <AnimatedContactCard icon={FaEnvelope} label="Email" />
+        </a>
+        <a href={linkedinLink} target="_blank" className="flex-1">
+          <AnimatedContactCard icon={FaLinkedinIn} label="LinkedIn" />
+        </a>
+        <a href={githubLink} target="_blank" className="flex-1">
+          <AnimatedContactCard icon={FaGithub} label="GitHub" />
+        </a>
       </div>
 
-      <div
+      <a
+        href="https://github.com/mohamedterbaoui/Portfolio_V2"
+        target="_blank"
         className="flex gap-2 justify-center items-center font-body cursor-pointer
        text-[#EEEEEE]/80 hover:text-[#EEEEEE] transition duration-300 mb-16"
       >
+        {" "}
         <p className="text-md">Designed and built by Mohamed Terbaoui</p>
         <FaGithub />
-      </div>
+      </a>
     </section>
   );
 }

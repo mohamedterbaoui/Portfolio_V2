@@ -43,10 +43,12 @@ export default function Hero() {
       <button
         className="w-fit mt-4 border border-[#45A29F] text-[#45A29F] px-6 py-2 rounded-md 
       hover:bg-[#3a8a87] hover:text-[#EEEEEE] transition-colors duration-300 ease-in-out
-      flex items-center justify-center gap-4 font-heading font-semibold text-sm"
+      flex items-center justify-center gap-4 font-heading font-semibold text-sm
+      cursor-pointer group"
+        onClick={() => window.open("/documents/sample.pdf", "_blank")}
       >
         <span>
-          <FaFileDownload />
+          <FaFileDownload className="group-hover:animate-bounce" />
         </span>{" "}
         Download Resume
       </button>
