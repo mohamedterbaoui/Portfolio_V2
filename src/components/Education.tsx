@@ -2,7 +2,10 @@ import { FaCalendar, FaUniversity } from "react-icons/fa";
 
 export default function Education() {
   return (
-    <section className="text-[#EEEEEE] mt-36 flex flex-col justify-center relative">
+    <section
+      id="education"
+      className="text-[#EEEEEE] mt-36 flex flex-col justify-center relative"
+    >
       <h1 className="text-center font-heading font-semibold text-5xl">
         Education
       </h1>
@@ -24,8 +27,8 @@ export default function Education() {
       <div
         className="
             mb-20
-            transition duration-100 ease-in-out
-            hover:shadow-[0_6px_4px_rgba(102,252,241,0.40)]
+            transition duration-200 ease-in-out
+            hover:shadow-[0_8px_4px_rgba(102,252,241,0.40)]
             shadow-[0_4px_2px_rgba(102,252,241,0.40)]
             rounded-lg
         "
@@ -74,8 +77,8 @@ export default function Education() {
       <div
         className="
             mb-20
-            transition duration-100 ease-in-out
-            hover:shadow-[0_6px_4px_rgba(102,252,241,0.40)]
+            transition duration-200 ease-in-out
+            hover:shadow-[0_8px_4px_rgba(102,252,241,0.40)]
             shadow-[0_4px_2px_rgba(102,252,241,0.40)]
             rounded-lg
         "

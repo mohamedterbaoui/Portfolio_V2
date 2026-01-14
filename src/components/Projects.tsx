@@ -2,7 +2,10 @@ import ProjectCard from "./widgets/ProjectCard";
 
 export default function Projects() {
   return (
-    <section className="text-[#EEEEEE] mt-16 flex flex-col justify-center relative">
+    <section
+      id="projects"
+      className="text-[#EEEEEE] mt-16 flex flex-col justify-center relative"
+    >
       <h1 className="text-center font-heading font-semibold text-5xl">
         Featured Projects
       </h1>

@@ -3,7 +3,10 @@ import { MdLocationPin } from "react-icons/md";
 
 export default function Hero() {
   return (
-    <section className="hero-section flex flex-col justify-start mt-28 text-[#EEEEEE]  relative">
+    <section
+      id="home"
+      className="hero-section flex flex-col justify-start mt-28 text-[#EEEEEE]  relative"
+    >
       <h2
         className="text-3xl 
         bg-linear-to-r 

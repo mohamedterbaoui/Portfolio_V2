@@ -31,7 +31,10 @@ export default function Skills() {
     { name: "Figma", Icon: FigmaIcon },
   ];
   return (
-    <section className="text-[#EEEEEE] mt-36 flex flex-col justify-center items-center relative">
+    <section
+      id="skills"
+      className="text-[#EEEEEE] mt-36 flex flex-col justify-center items-center relative"
+    >
       <h1 className="text-center font-heading font-semibold text-5xl">
         Skills
       </h1>
@@ -55,10 +58,7 @@ export default function Skills() {
 
       <div className="w-[80%] flex gap-12 flex-wrap justify-center items-center mt-16">
         {skills.map(({ name, Icon }) => (
-          <div
-            key={name}
-            className="group flex flex-col items-center gap-2 cursor-pointer"
-          >
+          <div key={name} className="group flex flex-col items-center gap-2">
             <Icon className="w-12 h-12 transition-transform duration-300 group-hover:scale-110" />
             <span className="text-xs opacity-0 transition-opacity duration-300 group-hover:opacity-100">
               {name}
