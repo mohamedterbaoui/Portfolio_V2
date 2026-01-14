@@ -12,7 +12,7 @@ export default function Projects() {
         mt-6
         w-[15%]
         self-center
-        h-[0.5px]
+        h-px
         bg-linear-to-r
         from-[#66FCF1]/00
         via-[#3D968F]
@@ -64,8 +64,7 @@ export default function Projects() {
       bg-radial
       from-[#66FCF1]/3
       to-[#3D968F]/3
-      blur-[100px]
-      animate-breathing
+      blur-[50px]
       "
       ></div>
     </section>

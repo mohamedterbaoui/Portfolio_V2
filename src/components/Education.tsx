@@ -12,7 +12,7 @@ export default function Education() {
         mt-6
         w-[10%]
         self-center
-        h-[0.5px]
+        h-px
         bg-linear-to-r
         from-[#66FCF1]/00
         via-[#3D968F]
