@@ -66,16 +66,6 @@ export default function Skills() {
           </div>
         ))}
       </div>
-
-      <div
-        className="w-130 aspect-square rounded-full self-center
-      absolute  -z-10
-      bg-radial
-      from-[#66FCF1]/3
-      to-[#3D968F]/3
-      blur-[100px]
-      "
-      ></div>
     </section>
   );
 }

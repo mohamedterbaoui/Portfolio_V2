@@ -62,15 +62,6 @@ export default function Hero() {
         to-[#66FCF1]/00
       "
       ></div>
-      <div
-        className="w-170 aspect-square rounded-full
-      absolute -top-80 -right-10 -z-10
-      bg-radial
-      from-[#66FCF1]/3
-      to-[#3D968F]/3
-      blur-[50px]
-      "
-      ></div>
     </section>
   );
 }

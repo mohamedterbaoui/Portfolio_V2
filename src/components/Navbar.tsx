@@ -10,13 +10,12 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [selectedSection, setSelectedSection] = useState("home");
 
-  const handleSectionClick = (section: string) => {
-    setSelectedSection(section);
-  };
+  const sections = ["home", "education", "projects", "skills", "contact"];
 
+  // Scroll to a section smoothly when clicking nav item
   const scrollToSection = (id: string) => {
     const el = document.getElementById(id);
-    const yOffset = id === "home" ? -200 : -100; // navbar height
+    const yOffset = id === "home" ? -200 : -100; // adjust for sticky navbar
 
     if (!el) return;
     const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
@@ -25,16 +24,36 @@ export default function Navbar() {
   };
 
   const handleNavClick = (section: string) => {
-    handleSectionClick(section);
+    setSelectedSection(section);
     scrollToSection(section);
   };
 
+  // Scroll spy + navbar shrink on scroll
   useEffect(() => {
     const handleScroll = () => {
+      // Shrink navbar
       setIsScrolled(window.scrollY > 50);
+
+      // Scroll spy
+      const scrollPos = window.scrollY + window.innerHeight / 2; // middle of viewport
+
+      for (let id of sections) {
+        const el = document.getElementById(id);
+        if (!el) continue;
+
+        const top = el.offsetTop;
+        const bottom = top + el.offsetHeight;
+
+        if (scrollPos >= top && scrollPos < bottom) {
+          setSelectedSection(id);
+          break;
+        }
+      }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll(); // run once on mount
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -53,11 +72,11 @@ export default function Navbar() {
       <div className="flex gap-2">
         {/* Email */}
         <a
-          href={emailAddress} // e.g. "mailto:you@email.com"
+          href={emailAddress}
           target="_blank"
           rel="noopener noreferrer"
           className="flex justify-center items-center h-5 w-5 rounded-full bg-[#808080]
-               transition-colors duration-300 ease-in-out hover:bg-[#EEEEEE]"
+                     transition-colors duration-300 ease-in-out hover:bg-[#EEEEEE]"
           aria-label="Send email"
         >
           <FaEnvelope className="text-sm text-[#000C12]" />
@@ -69,7 +88,7 @@ export default function Navbar() {
           target="_blank"
           rel="noopener noreferrer"
           className="flex justify-center items-center h-5 w-5 rounded-full bg-[#808080]
-               transition-colors duration-300 ease-in-out hover:bg-[#EEEEEE]"
+                     transition-colors duration-300 ease-in-out hover:bg-[#EEEEEE]"
           aria-label="LinkedIn profile"
         >
           <FaLinkedin className="text-sm text-[#000C12]" />
@@ -82,7 +101,7 @@ export default function Navbar() {
           rel="noopener noreferrer"
           aria-label="GitHub profile"
           className="text-xl text-[#808080]
-               transition-colors duration-300 ease-in-out hover:text-[#EEEEEE]"
+                     transition-colors duration-300 ease-in-out hover:text-[#EEEEEE]"
         >
           <FaGithub />
         </a>
@@ -90,47 +109,17 @@ export default function Navbar() {
 
       <div>
         <ul className="flex gap-10 font-heading font-semibold text-[#C4C6C8]">
-          <li
-            onClick={() => handleNavClick("home")}
-            className={`cursor-pointer transition-colors duration-300 ease-in-out hover:text-[#45A29F] ${
-              selectedSection === "home" ? "text-[#45A29F]" : ""
-            }`}
-          >
-            Home
-          </li>
-          <li
-            onClick={() => handleNavClick("education")}
-            className={`cursor-pointer transition-colors duration-300 ease-in-out hover:text-[#45A29F] ${
-              selectedSection === "education" ? "text-[#45A29F]" : ""
-            }`}
-          >
-            Education
-          </li>
-          <li
-            onClick={() => handleNavClick("projects")}
-            className={`cursor-pointer transition-colors duration-300 ease-in-out hover:text-[#45A29F] ${
-              selectedSection === "projects" ? "text-[#45A29F]" : ""
-            }`}
-          >
-            Projects
-          </li>
-
-          <li
-            onClick={() => handleNavClick("skills")}
-            className={`cursor-pointer transition-colors duration-300 ease-in-out hover:text-[#45A29F] ${
-              selectedSection === "skills" ? "text-[#45A29F]" : ""
-            }`}
-          >
-            Skills
-          </li>
-          <li
-            onClick={() => scrollToSection("contact")}
-            className={`cursor-pointer transition-colors duration-300 ease-in-out hover:text-[#45A29F] ${
-              selectedSection === "contact" ? "text-[#45A29F]" : ""
-            }`}
-          >
-            Contact
-          </li>
+          {sections.map((section) => (
+            <li
+              key={section}
+              onClick={() => handleNavClick(section)}
+              className={`cursor-pointer transition-colors duration-300 ease-in-out hover:text-[#45A29F] ${
+                selectedSection === section ? "text-[#45A29F]" : ""
+              }`}
+            >
+              {section.charAt(0).toUpperCase() + section.slice(1)}
+            </li>
+          ))}
         </ul>
       </div>
     </motion.nav>

@@ -124,17 +124,6 @@ export default function Education() {
           </p>
         </div>
       </div>
-
-      <div
-        className="w-170 aspect-square rounded-full self-center
-      absolute top-10 -left-40 -z-10
-      bg-radial
-      from-[#66FCF1]/3
-      to-[#3D968F]/3
-      blur-[100px]
-      animate-breathing
-      "
-      ></div>
     </section>
   );
 }
