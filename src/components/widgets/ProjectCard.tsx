@@ -1,4 +1,4 @@
-import { div } from "three/tsl";
+import { motion } from "framer-motion";
 
 type ProjectCardProps = {
   name: string;
@@ -6,6 +6,7 @@ type ProjectCardProps = {
   technologies: string[];
   demoLink: string;
   githubLink: string;
+  onClick?: () => void;
 };
 
 export default function ProjectCard({
@@ -14,17 +15,26 @@ export default function ProjectCard({
   technologies,
   demoLink,
   githubLink,
+  onClick,
 }: ProjectCardProps) {
   return (
-    <div
+    <motion.div
       className="
         flex flex-col justify-between
         bg-[#011824] text-[#EEEEEE] rounded-lg p-4 
+
         transition-all duration-300 ease-in-out
         hover:shadow-[0_6px_4px_rgba(102,252,241,0.40)]
         shadow-[0_4px_2px_rgba(102,252,241,0.40)]
         hover:scale-[1.02]
-        h-120"
+        h-120
+        group cursor-pointer
+        "
+      onClick={onClick}
+      layoutId={name}
+      transition={{
+        layout: { type: "spring", stiffness: 150, damping: 25, mass: 1 },
+      }}
     >
       <div className="h-48 bg-amber-200 rounded-sm mb-3">
         <img src="" alt="" />
@@ -45,7 +55,7 @@ export default function ProjectCard({
 
       <p className="text-body text-sm mb-4 mt-2">{description}</p>
 
-      <div className="group w-fit text-[#66FCF1] font-body text-sm flex items-center gap-2 cursor-pointer">
+      <div className="w-fit text-[#66FCF1] font-body text-sm flex items-center gap-2 cursor-pointer">
         <div
           className="
             h-px
@@ -79,6 +89,6 @@ export default function ProjectCard({
           Github
         </button>
       </div>
-    </div>
+    </motion.div>
   );
 }
