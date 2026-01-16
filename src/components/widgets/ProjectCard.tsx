@@ -71,20 +71,20 @@ export default function ProjectCard({
         <span className="group-hover:text-[#46ddd3]">More details</span>
       </div>
 
-      <div className="flex gap-4 justify-end items-center mt-2">
+      <div className="flex gap-4 justify-end items-center mt-6">
         <button
           onClick={() => window.open(demoLink, "_blank")}
-          className="w-fit mt-4 border border-[#45A29F] text-[#45A29F] px-6 py-2 rounded-md 
+          className="w-fit border border-[#45A29F] text-[#45A29F] px-6 py-2 rounded-md 
       hover:bg-[#3a8a87] hover:text-[#EEEEEE] transition-colors duration-300 ease-in-out
-      flex items-center justify-center gap-4 font-heading font-semibold text-sm cursor-pointer"
+      flex items-center justify-center  font-heading font-semibold text-sm cursor-pointer"
         >
           Demo
         </button>
         <button
           onClick={() => window.open(githubLink, "_blank")}
-          className="w-fit mt-4 border border-[#45A29F] text-[#45A29F] px-6 py-2 rounded-md 
-       hover:text-[#000C12] hover:border-[#EEEEEE] hover:bg-[#EEEEEE] transition-colors duration-300 ease-in-out
-      flex items-center justify-center gap-4 font-heading font-semibold text-sm cursor-pointer"
+          className="w-fit border border-[#45A29F] text-[#45A29F] px-6 py-2 rounded-md 
+          hover:bg-[#3a8a87] hover:text-[#EEEEEE] transition-colors duration-300 ease-in-out
+          flex items-center justify-center  font-heading font-semibold text-sm cursor-pointer"
         >
           Github
         </button>

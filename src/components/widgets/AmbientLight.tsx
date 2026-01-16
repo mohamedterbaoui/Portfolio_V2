@@ -11,8 +11,8 @@ export default function AmbientLight() {
 
   const y = useTransform(
     scrollYProgress,
-    [0, 0.25, 0.5, 0.7],
-    ["-15vh", "10vh", "30vh", "20vh"]
+    [0, 0.25, 0.5, 0.9, 1],
+    ["-15vh", "10vh", "30vh", "-10vh", "10vh"]
   );
 
   return (

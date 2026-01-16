@@ -83,7 +83,7 @@ export default function Projects() {
       "
       ></div>
 
-      <div className="grid grid-cols-2 gap-8">
+      <div className="grid grid-cols-2 gap-10">
         {projectData.map((project) => (
           <ProjectCard
             key={project.name}
@@ -102,9 +102,9 @@ export default function Projects() {
         )}
       </AnimatePresence>
 
-      <div className="text-end font-body cursor-pointer text-sm mt-6">
+      {/* <div className="text-end font-body cursor-pointer text-sm mt-8">
         Click here to see more projects →
-      </div>
+      </div> */}
     </section>
   );
 }

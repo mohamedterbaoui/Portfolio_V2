@@ -5,7 +5,7 @@ import Education from "./components/Education";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import Contact from "./components/Contact";
-import AmbientLight from "./components/AmbientLight";
+import AmbientLight from "./components/widgets/AmbientLight";
 
 function App() {
   return (

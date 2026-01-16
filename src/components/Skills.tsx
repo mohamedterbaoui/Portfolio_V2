@@ -33,7 +33,7 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="text-[#EEEEEE] mt-36 flex flex-col justify-center items-center relative"
+      className="text-[#EEEEEE] mt-48 flex flex-col justify-center items-center relative"
     >
       <h1 className="text-center font-heading font-semibold text-5xl">
         Skills
