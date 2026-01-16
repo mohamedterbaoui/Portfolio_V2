@@ -22,13 +22,14 @@ export default function ProjectDetail({
     <motion.div
       className="
         fixed inset-0 z-50 bg-[#011824] text-[#EEEEEE] p-8 overflow-y-auto
+        scrollbar-thin scrollbar-thumb-[#66FCF1]/50 scrollbar-track-transparent
       "
       layoutId={isClosing ? undefined : project.name} // Remove layoutId when closing
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{
-        opacity: { duration: 0.2 },
+        opacity: { duration: 0.3 },
       }}
     >
       <div className="w-[40%] mx-auto mt-12">
