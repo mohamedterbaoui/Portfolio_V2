@@ -85,7 +85,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="text-[#EEEEEE] mt-36 flex flex-col justify-center items-center relative"
+      className="text-[#EEEEEE] mt-40 flex flex-col justify-center items-center relative"
     >
       <h1 className="text-center font-heading font-semibold text-5xl">
         Get in touch

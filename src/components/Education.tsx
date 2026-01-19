@@ -4,7 +4,7 @@ export default function Education() {
   return (
     <section
       id="education"
-      className="text-[#EEEEEE] mt-36 flex flex-col justify-center relative"
+      className="text-[#EEEEEE] mt-40 flex flex-col justify-center relative"
     >
       <h1 className="text-center font-heading font-semibold text-5xl">
         Education
@@ -20,7 +20,7 @@ export default function Education() {
         from-[#66FCF1]/00
         via-[#3D968F]
         to-[#66FCF1]/00
-        mb-28
+        mb-36
       "
       ></div>
 
@@ -76,7 +76,7 @@ export default function Education() {
 
       <div
         className="
-            mb-20
+            
             transition duration-200 ease-in-out
             hover:shadow-[0_8px_4px_rgba(102,252,241,0.40)]
             shadow-[0_4px_2px_rgba(102,252,241,0.40)]

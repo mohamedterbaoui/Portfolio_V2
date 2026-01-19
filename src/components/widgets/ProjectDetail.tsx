@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 import { FaTimes } from "react-icons/fa";
 
 type ProjectDetailProps = {
@@ -6,6 +7,17 @@ type ProjectDetailProps = {
     name: string;
     description: string;
     technologies: string[];
+    role: string;
+    duration: string;
+    Type: string;
+    Platform: string;
+    ProblemStatement: string;
+    Solution: string;
+    KeyFeatures: string[];
+    TechnicalDecisions: string[];
+    Challenges: string;
+    imagesUrl: string[];
+    futureImprovements: string;
     demoLink: string;
     githubLink: string;
   };
@@ -18,6 +30,19 @@ export default function ProjectDetail({
   onClose,
   isClosing,
 }: ProjectDetailProps) {
+  const [isOpen, setIsOpen] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const imageRefs = useRef<(HTMLImageElement | null)[]>([]);
+
+  useEffect(() => {
+    if (isOpen) {
+      imageRefs.current[activeIndex]?.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
+    }
+  }, [isOpen, activeIndex]);
+
   return (
     <motion.div
       className="
@@ -43,8 +68,13 @@ export default function ProjectDetail({
           <FaTimes />
         </button>
 
-        {/* Hero */}
-        <div className="w-full h-60 bg-amber-300 mb-12 rounded-lg"></div>
+        <div className="w-full h-60 bg-[#EEEEEE] mb-12 rounded-lg overflow-hidden flex justify-center items-center">
+          <img
+            src={project.imagesUrl ? project.imagesUrl[0] : ""}
+            alt="Banner image"
+            className=""
+          />
+        </div>
 
         {/* Title */}
         <h1 className="text-4xl font-heading font-bold mb-4">{project.name}</h1>
@@ -64,20 +94,20 @@ export default function ProjectDetail({
         {/* 🔹 Project Overview */}
         <div className="grid grid-cols-2 gap-4 text-sm mb-10 text-[#C5C6C7]">
           <div>
-            <span className="font-semibold text-[#66FCF1]">Role:</span> Frontend
-            Developer
+            <span className="font-semibold text-[#66FCF1]">Role:</span>{" "}
+            {project.role}
           </div>
           <div>
-            <span className="font-semibold text-[#66FCF1]">Duration:</span> 3
-            weeks
+            <span className="font-semibold text-[#66FCF1]">Duration:</span>{" "}
+            {project.duration}
           </div>
           <div>
-            <span className="font-semibold text-[#66FCF1]">Type:</span> Personal
-            Project
+            <span className="font-semibold text-[#66FCF1]">Type:</span>{" "}
+            {project.Type}
           </div>
           <div>
-            <span className="font-semibold text-[#66FCF1]">Platform:</span> Web
-            Application
+            <span className="font-semibold text-[#66FCF1]">Platform:</span>{" "}
+            {project.Platform}
           </div>
         </div>
 
@@ -86,24 +116,17 @@ export default function ProjectDetail({
 
         {/* 🔹 Problem → Solution */}
         <h2 className="text-xl font-heading font-bold mb-3">Problem</h2>
-        <p className="text-body text-lg mb-6">
-          Users struggled with navigating complex interfaces and understanding
-          how different sections of the application were connected.
-        </p>
+        <p className="text-body text-lg mb-6">{project.ProblemStatement}</p>
 
         <h2 className="text-xl font-heading font-bold mb-3">Solution</h2>
-        <p className="text-body text-lg mb-10">
-          I designed a clean, animated interface with clear hierarchy and smooth
-          transitions to guide users naturally through the experience.
-        </p>
+        <p className="text-body text-lg mb-10">{project.Solution}</p>
 
         {/* Key Features */}
         <h2 className="text-xl font-heading font-bold mb-4">Key Features</h2>
         <ul className="text-body text-lg mb-10 list-disc list-inside space-y-1">
-          <li>Animated project transitions using Framer Motion</li>
-          <li>Responsive layout across all screen sizes</li>
-          <li>Reusable component architecture</li>
-          <li>Keyboard-accessible modal interactions</li>
+          {project.KeyFeatures.map((feature, index) => (
+            <li key={index}>{feature}</li>
+          ))}
         </ul>
 
         {/* 🔹 Technical Decisions */}
@@ -111,38 +134,85 @@ export default function ProjectDetail({
           Technical Decisions
         </h2>
         <ul className="list-disc list-inside text-body text-lg mb-10 space-y-2">
-          <li>Used React + TypeScript for scalability and type safety</li>
-          <li>Chose Framer Motion for layout animations over pure CSS</li>
-          <li>Tailwind CSS for rapid styling and design consistency</li>
+          {project.TechnicalDecisions.map((decision, index) => (
+            <li key={index}>{decision}</li>
+          ))}
         </ul>
 
         {/* 🔹 Challenges & Learnings */}
         <h2 className="text-xl font-heading font-bold mb-4">
           Challenges & Learnings
         </h2>
-        <p className="text-body text-lg mb-10">
-          Managing layout animations between components was challenging.
-          Learning how `layoutId` works allowed me to create smooth transitions
-          while maintaining performance and control.
-        </p>
+        <p className="text-body text-lg mb-10">{project.Challenges}</p>
 
         {/* 🔹 Screenshots / Gallery */}
-        <h2 className="text-xl font-heading font-bold mb-4">Screenshots</h2>
         <div className="grid grid-cols-2 gap-4 mb-12">
-          <div className="h-40 bg-[#000D14] rounded-lg"></div>
-          <div className="h-40 bg-[#000D14] rounded-lg"></div>
-          <div className="h-40 bg-[#000D14] rounded-lg"></div>
-          <div className="h-40 bg-[#000D14] rounded-lg"></div>
+          {project.imagesUrl.slice(1).map((url, index) => (
+            <div
+              key={index}
+              className="w-full h-48 rounded-md overflow-hidden cursor-pointer"
+              onClick={() => {
+                setActiveIndex(index);
+                setIsOpen(true);
+              }}
+            >
+              <div className="relative w-full h-full overflow-hidden group cursor-pointer">
+                <img
+                  src={url}
+                  alt={`Screenshot ${index + 1}`}
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+                />
+
+                {/* Overlay */}
+                <div
+                  className="
+                    absolute inset-0
+                    bg-[#45A29F]/20
+                    opacity-0
+                    group-hover:opacity-100
+                    transition-opacity duration-300
+                  "
+                />
+              </div>
+            </div>
+          ))}
         </div>
+
+        {isOpen && (
+          <div
+            className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center"
+            onClick={() => setIsOpen(false)}
+          >
+            {/* Prevent closing when clicking content */}
+            <div
+              className="max-w-5xl w-full max-h-[90vh] overflow-y-auto px-6 scrollbar-thin scrollbar-thumb-[#66FCF1]/50 scrollbar-track-transparent"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="space-y-6">
+                {project.imagesUrl.slice(1).map((url, index) => (
+                  <img
+                    key={index}
+                    ref={(el) => {
+                      imageRefs.current[index] = el;
+                    }}
+                    src={url}
+                    alt=""
+                    className="w-full rounded-lg"
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* 🔹 Future Improvements */}
         <h2 className="text-xl font-heading font-bold mb-4">
           Future Improvements
         </h2>
         <ul className="list-disc list-inside text-body text-lg mb-12 space-y-1">
-          <li>Add automated tests</li>
-          <li>Improve accessibility for screen readers</li>
-          <li>Optimize animations for low-end devices</li>
+          {project.futureImprovements.split("\n").map((improvement, index) => (
+            <li key={index}>{improvement}</li>
+          ))}
         </ul>
 
         {/* CTA */}
@@ -154,6 +224,7 @@ export default function ProjectDetail({
               hover:bg-[#3a8a87] hover:text-[#EEEEEE]
               transition-colors duration-300 ease-in-out
               font-heading font-semibold text-sm
+              cursor-pointer
             "
           >
             Demo
@@ -166,6 +237,7 @@ export default function ProjectDetail({
               hover:bg-[#3a8a87] hover:text-[#EEEEEE]
               transition-colors duration-300 ease-in-out
               font-heading font-semibold text-sm
+              cursor-pointer
             "
           >
             Github

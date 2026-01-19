@@ -4,6 +4,7 @@ type ProjectCardProps = {
   name: string;
   description: string;
   technologies: string[];
+  imagesUrl?: string[];
   demoLink: string;
   githubLink: string;
   onClick?: () => void;
@@ -13,6 +14,7 @@ export default function ProjectCard({
   name,
   description,
   technologies,
+  imagesUrl,
   demoLink,
   githubLink,
   onClick,
@@ -36,8 +38,8 @@ export default function ProjectCard({
         layout: { type: "spring", stiffness: 150, damping: 25, mass: 1 },
       }}
     >
-      <div className="h-48 bg-amber-200 rounded-sm mb-3">
-        <img src="" alt="" />
+      <div className="h-50 rounded-sm mb-3 overflow-hidden flex justify-center items-center bg-[#EEEEEE]">
+        <img src={imagesUrl?.[0] || ""} alt="project thumbnail" className="" />
       </div>
 
       <h2 className="font-bold text-[#66FCF1] font-heading text-xl">{name}</h2>
@@ -73,7 +75,10 @@ export default function ProjectCard({
 
       <div className="flex gap-4 justify-end items-center mt-6">
         <button
-          onClick={() => window.open(demoLink, "_blank")}
+          onClick={(e) => {
+            e.stopPropagation();
+            window.open(demoLink, "_blank");
+          }}
           className="w-fit border border-[#45A29F] text-[#45A29F] px-6 py-2 rounded-md 
       hover:bg-[#3a8a87] hover:text-[#EEEEEE] transition-colors duration-300 ease-in-out
       flex items-center justify-center  font-heading font-semibold text-sm cursor-pointer"
@@ -81,7 +86,10 @@ export default function ProjectCard({
           Demo
         </button>
         <button
-          onClick={() => window.open(githubLink, "_blank")}
+          onClick={(e) => {
+            e.stopPropagation();
+            window.open(githubLink, "_blank");
+          }}
           className="w-fit border border-[#45A29F] text-[#45A29F] px-6 py-2 rounded-md 
           hover:bg-[#3a8a87] hover:text-[#EEEEEE] transition-colors duration-300 ease-in-out
           flex items-center justify-center  font-heading font-semibold text-sm cursor-pointer"
