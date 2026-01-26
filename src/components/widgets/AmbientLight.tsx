@@ -1,4 +1,4 @@
-import { motion, useScroll, useTransform, useSpring } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 export default function AmbientLight() {
   const { scrollYProgress } = useScroll();

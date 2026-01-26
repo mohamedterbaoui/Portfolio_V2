@@ -4,8 +4,8 @@
 @plugin 'tailwind-scrollbar';
 
 @theme {
-  --font-inter: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
-    sans-serif;
+  --font-inter:
+    "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   --font-poppins: "Poppins", system-ui, sans-serif;
 
   --animate-breathing: breathing 8s ease-in-out infinite;
