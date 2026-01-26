@@ -111,9 +111,15 @@ export default function Navbar() {
         border: isScrolled ? "1px solid rgba(102, 252, 241, 0.2)" : "none",
       }}
       transition={{ duration: 0.3, ease: "easeInOut" }}
-      className="mx-auto sticky z-50 py-4 rounded-lg backdrop-blur-xl"
+      className="mx-auto sticky z-50 py-4 rounded-lg"
     >
-      <div className="flex justify-between">
+      {/* Blur layer */}
+      <motion.div
+        className="absolute inset-0 z-0 rounded-lg bg-[#000C12]/40 backdrop-blur-xl"
+        animate={{ opacity: isScrolled ? 1 : 0 }}
+        transition={{ duration: 0.3 }}
+      />
+      <div className="flex justify-between relative z-10">
         <div className="flex gap-2">
           {/* Email */}
           <a
@@ -194,7 +200,7 @@ export default function Navbar() {
           absolute
           right-0
           top-full
-          z-50
+          z-10
           mt-4
           flex
           flex-col
@@ -203,6 +209,7 @@ export default function Navbar() {
           font-semibold
           text-[#EEEEEE]
           text-right
+          bg-[#000C12]/80
           backdrop-blur-xl
           rounded-lg
           p-6

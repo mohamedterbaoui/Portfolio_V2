@@ -8,7 +8,7 @@ export default function Hero() {
       className="hero-section flex flex-col justify-start  mt-12 md:mt-16 lg:mt-24 2xl:mt-28 text-[#EEEEEE]  relative"
     >
       <h2
-        className="text-xl lg:text-3xl 
+        className="text-xl md:text-2xl lg:text-3xl 
         bg-linear-to-r 
       from-[#45A29F]
       to-[#035653]
@@ -20,7 +20,7 @@ export default function Hero() {
         FullStack Developer
       </h2>
       <h1
-        className="text-3xl lg:text-6xl bg-linear-to-r 
+        className="text-3xl md:text-5xl lg:text-6xl bg-linear-to-r 
       from-[#66FCF1]
       to-[#3D968F]
       bg-clip-text
@@ -36,7 +36,7 @@ export default function Hero() {
         Montreal, Canada
       </div>
 
-      <p className="font-body w-[90%] md:w-[90%] lg:w-[45%] text-md md:text-xl mb-10  md:mb-12">
+      <p className="font-body w-[90%] md:w-[80%] lg:w-[70%] 2xl:w-[60%] text-md md:text-xl mb-10  md:mb-12">
         Full-stack developer working mainly on web applications, with an
         interest in UI and practical design.
       </p>

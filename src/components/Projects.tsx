@@ -111,27 +111,30 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="text-[#EEEEEE] mt-40 flex flex-col justify-center relative"
+      className="text-[#EEEEEE] mt-28 md:mt-40 flex flex-col justify-center relative"
     >
-      <h1 className="text-center font-heading font-semibold text-5xl">
+      <h1 className="text-center font-heading font-semibold text-4xl md:text-5xl">
         Featured Projects
       </h1>
 
       <div
         className="
-        mt-6
-        w-[15%]
+        mt-4
+        md:mt-6
+        w-[30%]
+        md:w-[15%]
         self-center
         h-px
         bg-linear-to-r
         from-[#66FCF1]/00
         via-[#3D968F]
         to-[#66FCF1]/00
-        mb-36
+        mb-24
+        md:mb-36
       "
       ></div>
 
-      <div className="grid grid-cols-2 gap-10">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
         {projectData.map((project) => (
           <ProjectCard
             key={project.name}

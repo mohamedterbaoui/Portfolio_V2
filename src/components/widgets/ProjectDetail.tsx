@@ -55,7 +55,7 @@ export default function ProjectDetail({
       exit={{ opacity: 0 }}
       transition={{ opacity: { duration: 0.3 } }}
     >
-      <div className="w-[40%] mx-auto mt-16">
+      <div className="w-[80%] md:w-[40%] mx-auto mt-16">
         {/* Close */}
         <button
           onClick={onClose}

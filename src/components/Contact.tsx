@@ -85,7 +85,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="text-[#EEEEEE] mt-40 flex flex-col justify-center items-center relative"
+      className="text-[#EEEEEE] mt-24 md:mt-40 flex flex-col justify-center items-center relative"
     >
       <h1 className="text-center font-heading font-semibold text-5xl">
         Get in touch
@@ -93,8 +93,10 @@ export default function Contact() {
 
       <div
         className="
-        mt-6
-        w-[10%]
+        mt-4
+        md:mt-6
+        w-[20%]
+        md:w-[10%]
         h-px
         bg-linear-to-r
         from-[#66FCF1]/00
@@ -110,14 +112,18 @@ export default function Contact() {
         feel free to reach out through any of these platforms.
       </h3>
 
-      <div className="w-full flex gap-8 justify-around items-center mt-16 mb-32">
+      <div className="w-full grid grid-cols-2 sm:flex gap-4 md:gap-8 justify-around items-center mt-12 md:mt-16 mb-32">
         <a href={emailAddress} target="_blank" className="flex-1">
           <AnimatedContactCard icon={FaEnvelope} label="Email" />
         </a>
         <a href={linkedinLink} target="_blank" className="flex-1">
           <AnimatedContactCard icon={FaLinkedinIn} label="LinkedIn" />
         </a>
-        <a href={githubLink} target="_blank" className="flex-1">
+        <a
+          href={githubLink}
+          target="_blank"
+          className="flex-1 col-span-2 justify-self-center"
+        >
           <AnimatedContactCard icon={FaGithub} label="GitHub" />
         </a>
       </div>
@@ -126,10 +132,12 @@ export default function Contact() {
         href="https://github.com/mohamedterbaoui/Portfolio_V2"
         target="_blank"
         className="flex gap-2 justify-center items-center font-body cursor-pointer
-       text-[#EEEEEE]/80 hover:text-[#EEEEEE] transition duration-300 mb-16"
+       text-[#EEEEEE]/80 hover:text-[#EEEEEE] transition duration-300 mb-24"
       >
         {" "}
-        <p className="text-md">Designed and built by Mohamed Terbaoui</p>
+        <p className="text-sm md:text-md">
+          Designed and built by Mohamed Terbaoui
+        </p>
         <FaGithub />
       </a>
     </section>
