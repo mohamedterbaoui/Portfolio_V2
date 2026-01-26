@@ -21,8 +21,7 @@ export default function ProjectCard({
 }: ProjectCardProps) {
   return (
     <motion.div
-      className="
-        flex flex-col justify-between
+      className={`flex flex-col justify-between
         bg-[#011824] text-[#EEEEEE] rounded-lg p-4 
 
         transition-all duration-300 ease-in-out
@@ -31,15 +30,21 @@ export default function ProjectCard({
         hover:scale-[1.02]
         h-120
         group cursor-pointer
-        "
+        `}
       onClick={onClick}
       layoutId={name}
       transition={{
         layout: { type: "spring", stiffness: 150, damping: 25, mass: 1 },
       }}
     >
-      <div className="h-50 rounded-sm mb-3 overflow-hidden flex justify-center items-center bg-[#EEEEEE]">
-        <img src={imagesUrl?.[0] || ""} alt="project thumbnail" className="" />
+      <div
+        className={`h-50 aspect-4/3 rounded-sm mb-3 overflow-hidden flex justify-center items-center`}
+      >
+        <img
+          src={imagesUrl?.[0] || ""}
+          alt="project thumbnail"
+          className="w-full h-full object-cover"
+        />
       </div>
 
       <h2 className="font-bold text-[#66FCF1] font-heading text-xl">{name}</h2>

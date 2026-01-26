@@ -6,7 +6,7 @@ export default function Education() {
       id="education"
       className="text-[#EEEEEE]  mt-20 md:mt-40 flex flex-col justify-center relative"
     >
-      <h1 className="text-center font-heading font-semibold text-4xl md:text-5xl">
+      <h1 className="text-center font-heading font-semibold text-5xl">
         Education
       </h1>
 

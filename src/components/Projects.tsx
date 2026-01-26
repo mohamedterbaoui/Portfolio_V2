@@ -7,26 +7,26 @@ const projectData = [
   {
     name: "Atrium",
     description:
-      "A project description. More details about the project go here. a bit longer to fill space. Even more text to see how it looks. Add a little more.",
+      "A web platform for the university department to manage academic resources, users, and access levels.",
     technologies: ["React", "TypeScript", "TailwindCSS", "Supabase"],
     role: "Full-Stack Developer",
-    duration: "3 months",
+    duration: "Ongoing",
     Type: "Academic Project",
     Platform: "Web Application",
     ProblemStatement:
-      "Develop a platform to connect students with on-campus resources and services.",
+      "The department needed a single system to manage academic resources, users, and permissions.",
     Solution:
-      "Atrium is a web application that serves as a centralized hub for students to access various campus resources and services. It features user authentication, a resource directory, and an intuitive interface to enhance student engagement and support.",
+      "Atrium centralizes resources and user access, with authentication and role-based permissions.",
     KeyFeatures: [
-      "User Authentication: Secure sign-up and login for students.",
-      "Resource Directory: Comprehensive listing of campus resources.",
+      "Authentication and role-based access control",
+      "Resource management and data persistence",
     ],
     TechnicalDecisions: [
-      "Chose Supabase for backend to leverage its real-time database and authentication features.",
-      "Implemented TailwindCSS for rapid UI development and consistent styling.",
+      "Used Supabase for authentication and database to simplify backend setup",
+      "Used TailwindCSS for fast styling and consistent layout",
     ],
     Challenges:
-      "Managing real-time data synchronization and ensuring responsive design across different screen sizes.",
+      "Designing a flexible data model and handling role-based permissions.",
     imagesUrl: [
       "/screenshots/atrium/thumbnail.png",
       "/screenshots/atrium/1.png",
@@ -35,44 +35,44 @@ const projectData = [
       "/screenshots/atrium/4.png",
     ],
     futureImprovements:
-      "Integrate AI-driven recommendations for resources based on user behavior.",
+      "Add an admin dashboard for analytics and better user management.",
     demoLink: "https://atrium-i17h.onrender.com/",
     githubLink: "https://github.com/udem-diro/atrium",
   },
   {
     name: "Trndzy",
     description:
-      "A project description. More details about the project go here. a bit longer to fill space. Even more text to see how it looks. Add a little more.",
+      "A responsive business landing page with animated sections and smooth scrolling.",
     technologies: ["React", "TypeScript", "TailwindCSS", "Framer Motion"],
-    role: "Full-Stack Developer",
-    duration: "3 months",
-    Type: "Academic Project",
+    role: "Frontend Developer",
+    duration: "1 month",
+    Type: "Personal Project",
     Platform: "Web Application",
     ProblemStatement:
-      "Develop a platform to connect students with on-campus resources and services.",
+      "Create a modern landing page that highlights features and encourages conversions.",
     Solution:
-      "Atrium is a web application that serves as a centralized hub for students to access various campus resources and services. It features user authentication, a resource directory, and an intuitive interface to enhance student engagement and support.",
+      "A single-page site with animated sections, responsive layout, and smooth navigation.",
     KeyFeatures: [
-      "User Authentication: Secure sign-up and login for students.",
-      "Resource Directory: Comprehensive listing of campus resources.",
+      "Animated sections using Framer Motion",
+      "Responsive design with TailwindCSS",
     ],
     TechnicalDecisions: [
-      "Chose Supabase for backend to leverage its real-time database and authentication features.",
-      "Implemented TailwindCSS for rapid UI development and consistent styling.",
+      "Used Framer Motion for simple, reusable animation patterns",
+      "Used TailwindCSS for quick responsive layout and styling",
     ],
     Challenges:
-      "Managing real-time data synchronization and ensuring responsive design across different screen sizes.",
+      "Keeping animations smooth while maintaining performance on mobile devices.",
     imagesUrl: [
-      "/screenshots/atrium/thumbnail.png",
-      "/screenshots/atrium/1.png",
-      "/screenshots/atrium/2.png",
-      "/screenshots/atrium/3.png",
-      "/screenshots/atrium/4.png",
+      "/screenshots/LandingPage/thumbnail.png",
+      "/screenshots/LandingPage/1.png",
+      "/screenshots/LandingPage/2.png",
+      "/screenshots/LandingPage/3.png",
+      "/screenshots/LandingPage/4.png",
     ],
     futureImprovements:
-      "Integrate AI-driven recommendations for resources based on user behavior.",
-    demoLink: "https://atrium-i17h.onrender.com/",
-    githubLink: "https://github.com/udem-diro/atrium",
+      "Add a contact form with backend integration and analytics tracking.",
+    demoLink: "https://businesslandingpage.onrender.com/",
+    githubLink: "https://github.com/mohamedterbaoui/BusinessLandingPage",
   },
 ];
 
@@ -113,7 +113,7 @@ export default function Projects() {
       id="projects"
       className="text-[#EEEEEE] mt-28 md:mt-40 flex flex-col justify-center relative"
     >
-      <h1 className="text-center font-heading font-semibold text-4xl md:text-5xl">
+      <h1 className="text-center font-heading font-semibold text-5xl">
         Featured Projects
       </h1>
 

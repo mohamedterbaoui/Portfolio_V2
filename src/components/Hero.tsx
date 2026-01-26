@@ -46,7 +46,9 @@ export default function Hero() {
       hover:bg-[#3a8a87] hover:text-[#EEEEEE] transition-colors duration-300 ease-in-out
       flex items-center justify-center gap-4 font-heading font-semibold text-sm
       cursor-pointer group"
-        onClick={() => window.open("/documents/sample.pdf", "_blank")}
+        onClick={() =>
+          window.open("/documents/Mohamed_Terbaoui_resume.pdf", "_blank")
+        }
       >
         <span>
           <FaFileDownload className="group-hover:animate-bounce" />

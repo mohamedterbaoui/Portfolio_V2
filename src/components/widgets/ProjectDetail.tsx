@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-import { FaTimes } from "react-icons/fa";
+import { FaArrowLeft, FaTimes } from "react-icons/fa";
 
 type ProjectDetailProps = {
   project: {
@@ -55,24 +55,24 @@ export default function ProjectDetail({
       exit={{ opacity: 0 }}
       transition={{ opacity: { duration: 0.3 } }}
     >
-      <div className="w-[80%] md:w-[40%] mx-auto mt-16">
+      <div className="w-[95%] sm:w-[60%] md:w-[50%] lg:w-[45%] mx-auto mt-8 md:mt-16">
         {/* Close */}
         <button
           onClick={onClose}
           className="
             text-[#66FCF1] hover:text-[#46ddd3] text-2xl cursor-pointer
             hover:scale-[1.15] transition-transform duration-300 ease-in-out
-            fixed top-[5%] right-[25%]
+            fixed top-[3%] right-[3%] sm:right-[17%] md:right-[15%] lg:right-[25%]
           "
         >
           <FaTimes />
         </button>
 
-        <div className="w-full h-60 bg-[#EEEEEE] mb-12 rounded-lg overflow-hidden flex justify-center items-center">
+        <div className="w-full h-60 aspect-4/3 mb-12 rounded-lg overflow-hidden flex justify-center items-center">
           <img
             src={project.imagesUrl ? project.imagesUrl[0] : ""}
             alt="Banner image"
-            className=""
+            className="w-full h-full object-cover"
           />
         </div>
 
@@ -150,7 +150,7 @@ export default function ProjectDetail({
           {project.imagesUrl.slice(1).map((url, index) => (
             <div
               key={index}
-              className="w-full h-48 rounded-md overflow-hidden cursor-pointer"
+              className="w-full h-30 md:h-48 rounded-md overflow-hidden cursor-pointer"
               onClick={() => {
                 setActiveIndex(index);
                 setIsOpen(true);
@@ -202,6 +202,15 @@ export default function ProjectDetail({
                 ))}
               </div>
             </div>
+            <button
+              className="
+            text-[#66FCF1] hover:text-[#46ddd3] text-2xl cursor-pointer
+            hover:scale-[1.15] transition-transform duration-300 ease-in-out
+            fixed top-[1.5%] left-[5%] md:hidden
+          "
+            >
+              <FaArrowLeft />
+            </button>
           </div>
         )}
 
