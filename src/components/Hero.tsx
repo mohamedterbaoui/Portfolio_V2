@@ -5,37 +5,38 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="hero-section flex flex-col justify-start mt-28 text-[#EEEEEE]  relative"
+      className="hero-section flex flex-col justify-start  mt-12 md:mt-16 lg:mt-24 2xl:mt-28 text-[#EEEEEE]  relative"
     >
       <h2
-        className="text-3xl 
+        className="text-xl lg:text-3xl 
         bg-linear-to-r 
       from-[#45A29F]
       to-[#035653]
       bg-clip-text
       text-transparent
-      font-semibold font-heading"
+      font-semibold font-heading
+      mb-1"
       >
         FullStack Developer
       </h2>
       <h1
-        className="text-6xl bg-linear-to-r 
+        className="text-3xl lg:text-6xl bg-linear-to-r 
       from-[#66FCF1]
       to-[#3D968F]
       bg-clip-text
       text-transparent
-      font-semibold mb-5 font-heading"
+      font-semibold mb-4 md:mb-6 font-heading"
       >
         Mohamed Terbaoui
       </h1>
-      <div className="flex gap-1 items-center text-[#C4C6C8] mb-12">
+      <div className="flex gap-1 items-center text-[#C4C6C8] mb-8 md:mb-12">
         <span>
-          <MdLocationPin className="text-sm text-[#C4C6C8]" />
+          <MdLocationPin className="text-xs md:text-sm text-[#C4C6C8]" />
         </span>{" "}
         Montreal, Canada
       </div>
 
-      <p className="font-body w-[45%] text-xl mb-12">
+      <p className="font-body w-[90%] md:w-[90%] lg:w-[45%] text-md md:text-xl mb-10  md:mb-12">
         Full-stack developer working mainly on web applications, with an
         interest in UI and practical design.
       </p>
@@ -54,7 +55,7 @@ export default function Hero() {
       </button>
       <div
         className="
-        mt-30
+        mt-20 md:mt-30
         w-[90%]
         self-center
         h-px

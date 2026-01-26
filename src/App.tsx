@@ -9,7 +9,7 @@ import AmbientLight from "./components/widgets/AmbientLight";
 
 function App() {
   return (
-    <div className="w-[55%] mx-auto mt-10 ">
+    <div className="w-[80%] md:w-[70%] lg:w-[55%] mx-auto mt-6 md:mt-8 lg:mt-10 ">
       <AmbientLight />
       <Navbar />
       <Hero />

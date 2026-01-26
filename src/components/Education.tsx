@@ -4,29 +4,33 @@ export default function Education() {
   return (
     <section
       id="education"
-      className="text-[#EEEEEE] mt-40 flex flex-col justify-center relative"
+      className="text-[#EEEEEE]  mt-20 md:mt-40 flex flex-col justify-center relative"
     >
-      <h1 className="text-center font-heading font-semibold text-5xl">
+      <h1 className="text-center font-heading font-semibold text-4xl mb:text-5xl">
         Education
       </h1>
 
       <div
         className="
-        mt-6
-        w-[10%]
+        mt-4
+        md:mt-6
+        w-[20%]
+        md:w-[10%]
         self-center
         h-px
         bg-linear-to-r
         from-[#66FCF1]/00
         via-[#3D968F]
         to-[#66FCF1]/00
-        mb-36
+        mb-26
+        md:mb-36
       "
       ></div>
 
       <div
         className="
-            mb-20
+            mb-10
+            md:mb-20
             transition duration-200 ease-in-out
             hover:shadow-[0_8px_4px_rgba(102,252,241,0.40)]
             shadow-[0_4px_2px_rgba(102,252,241,0.40)]
