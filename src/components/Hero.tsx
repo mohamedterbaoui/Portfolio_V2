@@ -47,7 +47,7 @@ export default function Hero() {
       flex items-center justify-center gap-4 font-heading font-semibold text-sm
       cursor-pointer group"
         onClick={() =>
-          window.open("/documents/Mohamed_Terbaoui_resume.pdf", "_blank")
+          window.open("/documents/Mohamed_Terbaoui_Resume.pdf", "_blank")
         }
       >
         <span>
