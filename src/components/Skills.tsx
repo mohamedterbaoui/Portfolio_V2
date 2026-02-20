@@ -12,6 +12,7 @@ import { PostgresIcon } from "./icons/PostgresIcon";
 import { ThreejsIcon } from "./icons/ThreejsIcon";
 import { GitIcon } from "./icons/GitIcon";
 import { FigmaIcon } from "./icons/FigmaIcon";
+import { PhpIcon } from "./icons/PhpIcon";
 
 export default function Skills() {
   const skills = [
@@ -24,6 +25,7 @@ export default function Skills() {
     { name: "Python", Icon: PythonIcon },
     { name: "Node.js", Icon: NodejsIcon },
     { name: "Django", Icon: DjangoIcon },
+    { name: "PHP", Icon: PhpIcon },
     { name: "Supabase", Icon: SupabaseIcon },
     { name: "PostgreSQL", Icon: PostgresIcon },
     { name: "Three.js", Icon: ThreejsIcon },

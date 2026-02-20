@@ -40,6 +40,35 @@ const projectData = [
     githubLink: "https://github.com/udem-diro/atrium",
   },
   {
+    name: "Shortly",
+    description:
+      "A Url shortening service that allows users to create and manage shortened links.",
+    technologies: ["HTML5", "CSS3", "JavaScript", "Php", "MySQL"],
+    role: "Full-Stack Developer",
+    duration: "2 weeks",
+    Type: "Personal Project",
+    Platform: "Web Application",
+    ProblemStatement:
+      "Create a simple URL shortening service that allows users to generate short links and track their usage.",
+    Solution:
+      "A simple web application that allows users to generate and manage shortened URLs.",
+    KeyFeatures: ["URL shortening and redirection", "Permalink management"],
+    TechnicalDecisions: [
+      "Used PHP and MySQL for backend and database to simplify setup",
+      "Used vanilla JavaScript for frontend to keep it lightweight and simple",
+    ],
+    Challenges:
+      "Designing a simple data model for URL management and ensuring reliable redirection.",
+    imagesUrl: [
+      "/screenshots/shortly/thumbnail.png",
+      "/screenshots/shortly/1.png",
+    ],
+    futureImprovements:
+      "Add user accounts and analytics for link usage, and implement a more robust URL validation system.",
+    demoLink: "https://linkshortener.page.gd/",
+    githubLink: "https://github.com/mohamedterbaoui/Shortly",
+  },
+  {
     name: "Trndzy",
     description:
       "A responsive business landing page with animated sections and smooth scrolling.",
